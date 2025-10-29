@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Eletric Car</string>
+    <string name="tv_carros">Carros</string>
+    <string name="tv_favoritos">Favoritos</string>
+    <string name="tv_preco">Preço</string>
+    <string name="tv_preco_value">R$ 120.000,00</string>
+    <string name="tv_bateria">Bateria</string>
+    <string name="tv_bateria_value">93,4 kWh</string>
+    <string name="tv_potencia">Potência</string>
+    <string name="tv_potencia_value">646 cv</string>
+    <string name="tv_recarga">Recarga</string>
+    <string name="tv_recarga_value">23 min</string>
+    <string name="description_carro">Carro</string>
+</resources>
