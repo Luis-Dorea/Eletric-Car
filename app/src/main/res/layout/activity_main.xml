@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".presentation.MainActivity">
 
     <TextView
         android:id="@+id/tv_tituloId"
@@ -82,7 +82,6 @@
         android:text="@string/tv_bateria"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_precoId"/>
 
@@ -92,7 +91,6 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_bateria_value"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/tv_bateriaId"
         app:layout_constraintTop_toBottomOf="@id/tv_precoId"/>
 
@@ -103,7 +101,6 @@
         android:text="@string/tv_potencia"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bateriaId"/>
 
@@ -113,7 +110,6 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_potencia_value"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/tv_potenciaId"
         app:layout_constraintTop_toBottomOf="@id/tv_bateriaId"/>
 
@@ -124,7 +120,6 @@
         android:text="@string/tv_recarga"
         android:textStyle="bold"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_potenciaId"/>
 
@@ -134,10 +129,20 @@
         android:layout_height="wrap_content"
         android:text="@string/tv_recarga_value"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintStart_toEndOf="@id/tv_recargaId"
         app:layout_constraintTop_toBottomOf="@id/tv_potenciaId"/>
 
+    <Button
+        android:id="@+id/btn_calcularAutonomiaId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/btn_calcular_autonomia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_recargaId" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

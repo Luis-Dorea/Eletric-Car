@@ -11,4 +11,9 @@
     <string name="tv_recarga">Recarga</string>
     <string name="tv_recarga_value">23 min</string>
     <string name="description_carro">Carro</string>
+    <string name="btn_calcular_autonomia">CALCULAR AUTONOMIA</string>
+    <string name="tv_calculo_de_autonomia">Cálculo de Autonomia</string>
+    <string name="et_preco_kwh">Preço Kwh</string>
+    <string name="et_km_percorrido">KM Percorrido</string>
+    <string name="btn_calcular">CALCULAR</string>
 </resources>

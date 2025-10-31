@@ -12,7 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EletricCar">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.CalcularAutonomiaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
