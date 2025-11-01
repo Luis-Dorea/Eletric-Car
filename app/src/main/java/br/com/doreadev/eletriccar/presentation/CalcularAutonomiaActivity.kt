@@ -3,6 +3,7 @@ package br.com.doreadev.eletriccar.presentation
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,8 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
     lateinit var kmPercorrido: EditText
     lateinit var resultado: TextView
     lateinit var btnCalcular: Button
+    lateinit var ivCloset: ImageView
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,6 +37,10 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
         btnCalcular.setOnClickListener {
             calcular()
         }
+
+        ivCloset.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setupView() {
@@ -41,6 +48,7 @@ class CalcularAutonomiaActivity : AppCompatActivity() {
         kmPercorrido = findViewById(R.id.et_kmPercorridoId)
         resultado = findViewById(R.id.tv_resultadoId)
         btnCalcular = findViewById(R.id.btn_calcularId)
+        ivCloset = findViewById(R.id.iv_closeId)
     }
 
     private fun calcular() {
