@@ -1,4 +1,4 @@
-package br.com.doreadev.eletriccar.presentation
+package br.com.doreadev.eletriccar.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,15 +9,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView
 import br.com.doreadev.eletriccar.R
+import br.com.doreadev.eletriccar.data.CarFactory
+import br.com.doreadev.eletriccar.ui.adapter.CarAdapter
 
 class MainActivity : AppCompatActivity() {
-    lateinit var imagemCarro: ImageView
-    lateinit var precoValue: TextView
-    lateinit var bateriaValue: TextView
-    lateinit var potenciaValue: TextView
-    lateinit var recargaValue: TextView
     lateinit var btnCalcularAutonomia: Button
+    lateinit var listaCarros: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,15 +29,12 @@ class MainActivity : AppCompatActivity() {
         }
         setupViews()
         setupListeners()
+        setupListView()
     }
 
     private fun setupViews() {
-        imagemCarro = findViewById(R.id.iv_carId)
-        precoValue = findViewById(R.id.tv_precoValueId)
-        bateriaValue = findViewById(R.id.tv_bateriaValueId)
-        potenciaValue = findViewById(R.id.tv_potenciaValueId)
-        recargaValue = findViewById(R.id.tv_recargaValueId)
         btnCalcularAutonomia = findViewById(R.id.btn_calcularAutonomiaId)
+        listaCarros = findViewById(R.id.rv_listaCarrosId)
     }
 
     private fun setupListeners() {
@@ -46,5 +42,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, CalcularAutonomiaActivity::class.java))
         }
 
+    }
+
+    private fun setupListView() {
+        val adapter = CarAdapter(CarFactory.list)
+        listaCarros.adapter = adapter
     }
 }

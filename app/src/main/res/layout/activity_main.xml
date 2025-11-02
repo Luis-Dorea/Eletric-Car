@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
         android:id="@+id/tv_tituloId"
@@ -42,117 +42,6 @@
         app:layout_constraintTop_toBottomOf="@id/tv_tituloId"
         app:layout_constraintStart_toEndOf="@id/tv_carrosId"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cv_cardCarrosId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        android:elevation="16dp"
-        app:cardBackgroundColor="@color/Lightgray"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintStart_toEndOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_favoritosId">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_cardContentId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="8dp">
-
-            <ImageView
-                android:id="@+id/iv_carId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/eletric_car"
-                android:contentDescription="@string/description_carro"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <TextView
-                android:id="@+id/tv_precoId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_preco"
-                style="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_carId"/>
-
-            <TextView
-                android:id="@+id/tv_precoValueId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_preco_value"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_precoId"
-                app:layout_constraintTop_toBottomOf="@id/iv_carId"/>
-
-            <TextView
-                android:id="@+id/tv_bateriaId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_bateria"
-                style="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_precoId"/>
-
-            <TextView
-                android:id="@+id/tv_bateriaValueId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_bateria_value"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_bateriaId"
-                app:layout_constraintTop_toBottomOf="@id/tv_precoId"/>
-
-            <TextView
-                android:id="@+id/tv_potenciaId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_potencia"
-                style="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_bateriaId"/>
-
-            <TextView
-                android:id="@+id/tv_potenciaValueId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_potencia_value"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_potenciaId"
-                app:layout_constraintTop_toBottomOf="@id/tv_bateriaId"/>
-
-            <TextView
-                android:id="@+id/tv_recargaId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_recarga"
-                style="@style/TextAppearance.AppCompat.Body2"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_potenciaId"/>
-
-            <TextView
-                android:id="@+id/tv_recargaValueId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/tv_recarga_value"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_marginStart="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_recargaId"
-                app:layout_constraintTop_toBottomOf="@id/tv_potenciaId"/>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.cardview.widget.CardView>
-
-
-
     <Button
         android:id="@+id/btn_calcularAutonomiaId"
         android:layout_width="match_parent"
@@ -163,7 +52,18 @@
         android:text="@string/btn_calcular_autonomia"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cv_cardCarrosId" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_favoritosId" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_listaCarrosId"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        tools:listitem="@layout/carro_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_calcularAutonomiaId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

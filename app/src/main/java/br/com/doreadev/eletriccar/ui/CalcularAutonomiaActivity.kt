@@ -1,4 +1,4 @@
-package br.com.doreadev.eletriccar.presentation
+package br.com.doreadev.eletriccar.ui
 
 import android.os.Bundle
 import android.widget.Button
