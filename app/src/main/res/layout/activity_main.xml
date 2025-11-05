@@ -20,50 +20,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_carrosId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:text="@string/tv_carros"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_tituloId" />
-
-    <TextView
-        android:id="@+id/tv_favoritosId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/tv_favoritos"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/tv_tituloId"
-        app:layout_constraintStart_toEndOf="@id/tv_carrosId"/>
-
-    <Button
-        android:id="@+id/btn_calcularAutonomiaId"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tl_tabLayoutId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/btn_calcular_autonomia"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_favoritosId" />
+        app:layout_constraintTop_toBottomOf="@id/tv_tituloId"
+        app:layout_constraintEnd_toEndOf="parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_listaCarrosId"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ti_itemCarroId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_carros"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/ti_itemFavoritoId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_favoritos"/>
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp_viewPagerId"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        tools:listitem="@layout/carro_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/tl_tabLayoutId"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_calcularAutonomiaId"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_floatingActionButtonId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_calculate"
+        android:layout_margin="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

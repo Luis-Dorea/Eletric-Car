@@ -16,4 +16,8 @@
     <string name="et_preco_kwh">Preço Kwh</string>
     <string name="et_km_percorrido">KM Percorrido</string>
     <string name="btn_calcular">CALCULAR</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="carro_fragment">Carro fragment</string>
+    <string name="Favoritos_fragment">Favoritos fragment</string>
 </resources>
